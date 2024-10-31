@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login Page</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"> <!-- For icons -->
+    <style>
+        /* General Reset and Body Styling */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            font-family: Arial, sans-serif;
+            overflow: hidden; /* Hide scrollbars */
+            position: relative;
+        }
+
+        /* Video Background */
+        .video-background {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100vw;
+            height: 100vh;
+            object-fit: cover;
+            z-index: -1; /* Behind the form */
+        }
+
+        /* Wrapper for the Form */
+        .wrapper {
+            background: rgba(255, 255, 255, 0); /* Semi-transparent white background */
+            border-radius: 15px;
+            padding: 30px;
+            box-shadow: 0px 8px 16px rgba(0, 0, 0, 0);
+            width: 400px;
+            text-align: center;
+            z-index: 1; /* In front of the video */
+        }
+
+        h3 {
+            color: #f361f3;
+            font-weight: bold;
+            margin-bottom: 20px;
+            font-size: 3vh;
+        }
+
+        h1 {
+            color: #764776;
+            margin-bottom: 20px;
+        }
+        
+        p {
+            padding-left: 10px;
+            color: aliceblue;
+            font-size: 15px;
+            font-weight: bolder;
+        }
+        .register-link a{
+            color: blue;
+        }
+
+        .input-box {
+            position: relative;
+            margin: 15px 0;
+        }
+
+        .input-box input {
+            width: 100%;
+            padding: 10px 10px 10px 35px; /* Added padding-left to make space for the icon */
+            border: 1px solid #764776;
+            border-radius: 5px;
+            font-size: 16px;
+            transition: border-color 0.3s ease;
+        }
+
+        .input-box input:focus {
+            border-color: #a056a5;
+            outline: none;
+        }
+
+        .input-box i {
+            position: absolute;
+            top: 50%;
+            left: 10px;
+            transform: translateY(-50%);
+            color: #764776;
+            font-size: 20px;
+        }
+
+        .remember-forget {
+            display: flex;
+            justify-content: space-between;
+            margin: 20px 0;
+            color: #333;
+        }
+
+        .btn {
+            background-color: #764776;
+            color: white;
+            font-weight: bold;
+            padding: 10px 15px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+            width: 100%;
+        }
+
+        .btn:hover {
+            background-color: #a056a5;
+        }
+
+        .register-link {
+            margin-top: 10px;
+            color: #333;
+        }
+
+        .register-link a{
+            color: #1b7edb;
+            font-weight: bold;
+        }
+
+        .register-link a:hover {
+            color: #a056a5;
+        }
+
+        /* Media Queries for Responsiveness */
+        @media (max-width: 768px) {
+            .wrapper {
+                width: 80%;
+                padding: 20px;
+            }
+
+            h1 {
+                font-size: 28px;
+            }
+
+            .input-box input {
+                font-size: 14px;
+            }
+
+            .btn {
+                padding: 8px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .wrapper {
+                width: 90%;
+                padding: 15px;
+            }
+
+            h1 {
+                font-size: 24px;
+            }
+
+            .input-box input {
+                font-size: 12px;
+            }
+
+            .btn {
+                padding: 6px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Video Background -->
+    <video autoplay muted loop class="video-background">
+        <source src="images/bg3video.mp4" type="video/mp4">
+        Your browser does not support the video tag.
+    </video>
+
+    <!-- Login Form Wrapper -->
+    <div class="wrapper">
+        <h3>Lyotex Lifesciences Pvt Ltd</h3>
+        <form action="/login" method="POST">
+            <h1>Login</h1>
+            <div class="input-box">
+                <input type="text" name="email" placeholder="Username" required>
+                <i class='fas fa-user'></i>
+            </div>
+            <div class="input-box">
+                <input type="password" name="password" placeholder="Password" required>
+                <i class='fas fa-lock'></i>
+            </div>
+            <div id="error-modal" style="display:none; position:fixed; top:50%; left:50%; transform:translate(-50%, -50%); background-color:white; border:1px solid black; padding:20px; z-index:1000;">
+                <p>Invalid email or password.</p>
+                <button onclick="closeModal()">Close</button>
+            </div>
+            <div class="remember-forget">
+                <label><input type="checkbox"> Remember me</label>
+                <a href="forgot-password.html">Forgot Password?</a>
+            </div>
+            <button type="submit" class="btn">Login</button>
+            <div class="register-link">
+                <p>Don't have an Account? <a href="signup.html">Register here</a></p>
+            </div>
+        </form>
+    </div>
+
+    <script>
+        function closeModal() {
+            document.getElementById('error-modal').style.display = 'none';
+        }
+
+        // Check if there's an error message passed in the URL
+        const urlParams = new URLSearchParams(window.location.search);
+        const error = urlParams.get('error');
+
+        if (error) {
+            document.getElementById('error-modal').style.display = 'block';
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Registration Form</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+    <link rel="stylesheet" type="text/css" href="/css/signup.css">
+    <style>
+        /* Styling for the video background and form aesthetics */
+
+       
+    </style>
+</head>
+<body>
+
+    <!-- Video Background -->
+    <video autoplay muted loop class="video-background">
+        <source src="images/bg2video.mp4" type="video/mp4">
+        Your browser does not support the video tag.
+    </video>
+
+    <!-- Registration Form Container -->
+    <div class="container">
+        <h1>Lyotex </h1>
+        <div class="row">
+            <div class="col-md-12">
+                <form action="/register" method="POST">
+                    <h2>Registration Form</h2>
+                    <input type="text" class="box" id="name" name="fullname" placeholder="Name" required />
+                    <input type="text" class="box" id="age" name="age" placeholder="Age" required />
+                    <input type="email" class="box" id="email" name="email" placeholder="EmailId" required />
+                    <input type="text" class="box" id="phno" name="phno" placeholder="Mobile" required />
+                    <input type="text" class="box" id="gender" name="gender" placeholder="Gender" required />
+                    <input type="password" class="box" id="password" name="password" placeholder="Password" required />
+                    <input type="submit" value="Submit" id="submit" />
+                </form>
+                <p>Already have an account? <a href="login.html">Login here</a></p>
+            </div>
+        </div>
+    </div>
+
+</body>
+</html>

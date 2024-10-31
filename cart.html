@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cart</title>
+    <style>
+        /* General Reset and Body Styling */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: Arial, sans-serif;
+        }
+
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            background-color: #f4f4f9;
+        }
+
+        h1 {
+            text-align: center;
+            color: #333;
+            margin-bottom: 20px;
+        }
+
+        .cart-container {
+            width: 90%;
+            max-width: 800px;
+            background: #fff;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        .cart-item {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 15px;
+            border-bottom: 1px solid #e0e0e0;
+        }
+
+        .cart-item:last-child {
+            border-bottom: none;
+        }
+
+        .item-details {
+            flex: 2;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .item-details h2 {
+            font-size: 18px;
+            color: #333;
+            margin-bottom: 5px;
+        }
+
+        .item-details p {
+            color: #777;
+            font-size: 14px;
+        }
+
+        .item-quantity,
+        .item-price {
+            flex: 1;
+            text-align: center;
+        }
+
+        .item-price {
+            font-weight: bold;
+            color: #333;
+        }
+
+        .total {
+            display: flex;
+            justify-content: space-between;
+            padding: 15px 0;
+            font-size: 18px;
+            font-weight: bold;
+            border-top: 1px solid #e0e0e0;
+            margin-top: 20px;
+        }
+
+        .btn {
+            display: block;
+            width: 100%;
+            padding: 12px;
+            background-color: #28a745;
+            color: #fff;
+            font-weight: bold;
+            text-align: center;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 16px;
+            transition: background-color 0.3s;
+            margin-top: 20px;
+        }
+
+        .btn:hover {
+            background-color: #218838;
+        }
+
+        /* Responsive Adjustments */
+        @media (max-width: 600px) {
+            .cart-item {
+                flex-direction: column;
+                align-items: flex-start;
+            }
+
+            .item-details,
+            .item-quantity,
+            .item-price {
+                text-align: left;
+            }
+
+            .item-quantity,
+            .item-price {
+                width: 100%;
+                margin-top: 10px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="cart-container">
+        <h1>Your Cart</h1>
+
+        <!-- Cart Items -->
+        <div id="cart-items">
+            <!-- Example of a Cart Item (This should be dynamically generated) -->
+            <div class="cart-item">
+                <div class="item-details">
+                    <h2>Product Name</h2>
+                    <p>Quantity: <span class="item-quantity">1</span></p>
+                </div>
+                <div class="item-price">$20.00</div>
+            </div>
+            <!-- End of Example Cart Item -->
+        </div>
+
+        <!-- Total Price -->
+        <div class="total">
+            <span>Total:</span>
+            <span id="total-price">$0.00</span>
+        </div>
+
+        <!-- Proceed to Payment Button -->
+        <button onclick="processPayment()" class="btn">Proceed to Payment</button>
+    </div>
+
+    <script>
+        const userId = 1; // This should be dynamically set by the server when the user logs in
+
+        function addToCart(productId, productName, price) {
+            const quantity = document.getElementById(`quantity-${productId}`).value;
+
+            const data = {
+                user_id: userId,
+                product_id: productId,
+                product_name: productName,
+                quantity: Number(quantity),
+                price: parseFloat(price) // Sending the price correctly
+            };
+
+            fetch('/finish', {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify(data)
+            })
+            .then(response => {
+                if (response.ok) {
+                    alert('Product added to cart successfully');
+                    window.location.href = 'cart.html'; // Redirect to cart page
+                } else {
+                    alert('User Not Logged In');
+                }
+            })
+            .catch(error => console.error('Error adding to cart:', error));
+        }
+    </script>
+</body>
+<script src="server.js"></script>
+<script src="script.js"></script>
+</html>

@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/home.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+
+    <title>Lyotex E-Commerce</title>
+</head>
+<body>
+    <nav class="navbar">
+        <div class="logo"><strong>Lyotex</strong></div>
+        <button class="menu-toggle" onclick="toggleMenu()">
+            <i class="fas fa-bars"></i>
+        </button>
+        <ul class="nav-links">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="about.html">About</a></li>
+            <li class="login">
+                <a href="login.html">Login</a>
+            </li>
+            <li>
+                <a href="finish.html"><i class="fas fa-shopping-cart"></i> Cart</a>
+            </li>
+            
+        </ul>
+    </nav>
+    <div class="banner-carousel">
+        <div class="carousel">
+            <div class="carousel-images">
+                <img src="images/banner2.jpg" alt="Image 1" class="active">
+<img src="images/banner3.jpg" alt="Image 2">
+<img src="images/banner4.jpg" alt="Image 3">
+<img src="images/banner5.jpg" alt="Image 4">
+<img src="images/banner6.jpg" alt="Image 5">
+
+            </div>
+        </div>
+        <button class="arrow left" onclick="changeSlide(-1)">&#10094;</button>
+        <button class="arrow right" onclick="changeSlide(1)">&#10095;</button>
+    </div>
+    <div class="main-diplay">
+        <img id="slideshow-image" src="banner3.jpg" alt="">
+    </div>
+       <div class="scroll-container">
+        <div class="scroll-images">
+            <img src="images/mb3.jpg" alt="image 1">
+            <img src="images/mb2.webp" alt="image 2">
+            <img src="images/mb3.jpg" alt="image 3">
+            <img src="images/mb1.webp" alt="image 4">
+            <img src="images/mb3.jpg" alt="image 1">
+            <img src="images/mb4.jpg" alt="image 1">
+            <img src="images/mb5.jpg" alt="image 1">
+            <img src="images/mb3.jpg" alt="image 1">
+            <img src="images/mb2.webp" alt="image 2">
+            <img src="images/mb3.jpg" alt="image 3">
+            <img src="images/mb1.webp" alt="image 4">
+            <img src="images/mb3.jpg" alt="image 1">
+            <img src="images/mb4.jpg" alt="image 1">
+            <img src="images/mb5.jpg" alt="image 1">
+            <img src="images/mb3.jpg" alt="image 1">
+            <img src="images/mb2.webp" alt="image 2">
+            <img src="images/mb3.jpg" alt="image 3">
+            <img src="images/mb1.webp" alt="image 4">
+            <img src="images/mb3.jpg" alt="image 1">
+            <img src="images/mb4.jpg" alt="image 1">
+            <img src="images/mb5.jpg" alt="image 1">
+            <img src="images/mb3.jpg" alt="image 1">
+            <img src="images/mb2.webp" alt="image 2">
+            <img src="images/mb3.jpg" alt="image 3">
+            <img src="images/mb1.webp" alt="image 4">
+            <img src="images/mb3.jpg" alt="image 1">
+            <img src="images/mb4.jpg" alt="image 1">
+            <img src="images/mb5.jpg" alt="image 1">
+        </div>
+    </div>
+    <div id="offers" class="offer-section">
+        <h2 class="offer-title">WHAT WE OFFER?</h2>
+        <div class="product-sections">
+            <div class="product-card">
+                <a href="vitamins.html">
+                    <img src="images/vitaminss.png" alt="Vitamins">
+                    <div class="overlay">VITAMINS</div>
+                </a>
+            </div>
+            <div class="product-card">
+                <a href="suppliments.html">
+                    <img src="images/SUPPLE.png" alt="Supplements">
+                    <div class="overlay">SUPPLEMENTS</div>
+                </a>
+            </div>
+            <div class="product-card">
+                <a href="medic.html">
+                    <img src="images/medicationss.png" alt="Medication">
+                    <div class="overlay">MEDICATIONS</div>
+                </a>
+            </div>
+        </div>
+    </div>
+    
+    <!-- Start Shopping Section -->
+<div class="shopping-steps-section">
+    <h2 class="shopping-steps-title">Start shopping with us in 3 Steps!</h2>
+    <div class="shopping-steps">
+        <div class="step-card">
+            <img src="images/step-1.webp" alt="Register">
+            <div class="step-title">Register</div>
+        </div>
+        <div class="step-card">
+            <img src="images/step-2.webp" alt="Login">
+            <div class="step-title">Login</div>
+        </div>
+        <div class="step-card">
+            <img src="images/step-3.webp" alt="Start Ordering">
+            <div class="step-title">Start Ordering</div>
+        </div>
+    </div>
+</div>
+<footer class="footer">
+    <div class="footer-container">
+        <div class="footer-section">
+            <h3>About Us</h3>
+            <p>We are committed to providing the best health and wellness products.</p>
+        </div>
+        <div class="footer-section">
+            <h3>Contact Us</h3>
+            <p>Email: support@lyotex.com</p>
+            <p>Phone: +1 234 567 8901</p>
+        </div>
+        <div class="footer-section">
+            <h3>Quick Links</h3>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="">Terms & Conditions</a></li>
+                <li><a href="">Privacy Policy</a></li>
+            </ul>
+        </div>
+    </div>
+    <div class="social-icons">
+        <a href="https://www.facebook.com" target="_blank" title="Facebook"><i class="fab fa-facebook-f"></i></a>
+        <a href="https://www.instagram.com" target="_blank" title="Instagram"><i class="fab fa-instagram"></i></a>
+        <a href="https://www.google.com" target="_blank" title="Google"><i class="fab fa-google"></i></a>
+        <a href="https://www.linkedin.com" target="_blank" title="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+    </div>
+    <div class="footer-bottom">
+        <p>&copy; 2024 Lyotex E-Commerce. All Rights Reserved.</p>
+    </div>
+</footer>
+
+    
+    <script src="/server.js"></script>
+<script src="../script.js"></script>
+</body>
+
+<script>
+    function toggleMenu() {
+    const navLinks = document.querySelector('.nav-links');
+    navLinks.classList.toggle('active'); // Toggle the 'active' class
+}
+
+   
+
+    let currentIndex = 0;
+const images = document.querySelectorAll('.carousel-images img');
+
+function showSlide(index) {
+    images.forEach((img, i) => {
+        img.classList.remove('active');
+        if (i === index) img.classList.add('active');
+    });
+}
+
+function changeSlide(direction) {
+    currentIndex = (currentIndex + direction + images.length) % images.length;
+    showSlide(currentIndex);
+}
+
+// Automatically cycle through images
+setInterval(() => changeSlide(1), 3000); // Change slide every 3 seconds
+
+function changeImage() {
+        currentIndex++; // Move to the next image
+        if (currentIndex >= images.length) {
+            currentIndex = 0; // Reset to the first image
+        }
+        document.getElementById('slideshow-image').src = images[currentIndex]; // Change the image source
+    }
+    document.getElementById('productsBtn').addEventListener('click', function() {
+            // Scroll to the offers section
+            window.location.href = '/#offers'; // Redirect to homepage and scroll to offers section
+        });
+
+</script>
+</html>
