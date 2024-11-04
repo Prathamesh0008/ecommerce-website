@@ -1,0 +1,336 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Lyotex</title>
+        <link rel="stylesheet" href="css/beauty.css">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css"
+            integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg=="
+            crossorigin="anonymous" referrerpolicy="no-referrer" />
+            <script src="https://code.jquery.com/jquery-3.7.1.min.js" integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
+    </head>
+    
+    <body>
+        <style>
+            /* Modal styling */
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 1;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    
+    overflow: auto;
+    background-color: rgba(0, 0, 0, 0.4);
+    padding-top: 60px;
+}
+.modal-content {
+    background-color: #fefefe;
+    margin: auto;
+    padding: 20px;
+    border: 2px solid black;
+    width: 300px;
+    text-align: center;
+}
+.modal-content img {
+    width: 100%;
+    height: auto;
+}
+.close {
+    color: #aaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+    cursor: pointer;
+}
+.close:hover {
+    color: black;
+}
+
+        </style>
+        
+        <nav class="navbar">
+            <div class="navbar-container">
+                <div class="navbar-logo">
+                    <a href="/">
+                        <strong>Lyotex</strong>
+                    </a>
+                </div>
+                <ul class="navbar-menu">
+                    <li><a href="/">Home</a></li>
+                    <li><button id="productsBtn" style="background: none; border: none; color: white; cursor: pointer; font-size: 16px;">
+                        Products 
+                    </button></li>
+                    <li><a href="about.html">About</a></li>                    
+                    <li>
+                        <button title="cart" id="cartBtn" class="cart-link" style="background: chocolate;
+                        padding: 9px;
+                        border-radius: 20px;color: #fff; border: none;">
+                            <a ><i class="fas fa-shopping-cart"></i> Cart</a><span id="totalCart"></span>
+                        </button>
+                    </li>
+                </ul>
+                <div class="navbar-toggle" id="mobile-menu">
+                    <span class="bar"></span>
+                    <span class="bar"></span>
+                    <span class="bar"></span>
+                </div>
+            </div>
+        </nav>    
+        
+    <!-- <div class="container"> -->
+        <h1>Health</h1>
+        <!-- <div class="products-grid"> -->
+                <style>
+                    /* Basic styles for the modal */
+                    .modal {
+                        display: none; 
+                        position: fixed; 
+                        z-index: 1; 
+                        left: 0;
+                        top: 0;
+                        width: 100%; 
+                        height: 100%; 
+                        overflow: auto; 
+                        background-color: rgb(0,0,0);
+                        background-color: rgba(0,0,0,0.4); 
+                        padding-top: 60px;
+                    }
+                    .modal-content {
+                        background-color: #fefefe;
+                        margin: 5% auto; 
+                        padding: 20px;
+                        border: 1px solid #888;
+                        width:280px; 
+                    }
+                    .close {
+                        color: #aaa;
+                        float: right;
+                        font-size: 28px;
+                        font-weight: bold;
+                    }
+                    .close:hover,
+                    .close:focus {
+                        color: black;
+                        text-decoration: none;
+                        cursor: pointer;
+                    }
+                </style>
+            </head>
+            
+            <body>
+                
+            
+                <div class="container">
+                
+                <div class="product-content" >                    
+                    <div id="product-container" style="display: flex;
+                    gap: 15px;
+                    justify-content: center;
+                    flex-wrap: wrap;
+                "></div>
+                </div>
+                <!-- Modal Structure -->
+<div id="productModal" class="modal">
+    <div class="modal-content">
+        <span class="close" onclick="closeModal()">&times;</span>
+        <h3 id="modalTitle"></h3>
+        <img id="modalImage" alt="Product Image">
+        <p id="modalDescription"></p>
+        <p id="modalPrice" class="price"></p>
+    </div>
+</div>
+
+                <footer class="footer">
+                    <div class="footer-container">
+                        <div class="footer-section">
+                            <h3>About Us</h3>
+                            <p>We are committed to providing the best health and wellness products.</p>
+                        </div>
+                        <div class="footer-section">
+                            <h3>Contact Us</h3>
+                            <p>Email: support@lyotex.com</p>
+                            <p>Phone: +1 234 567 8901</p>
+                        </div>
+                        <div class="footer-section">
+                            <h3>Quick Links</h3>
+                            <ul>
+                                <li><a href="index.html">Home</a></li>
+                                <li><a href="/ecommerce-website/about.html">About</a></li>
+                                <li><a href="terms.html">Terms & Conditions</a></li>
+                                <li><a href="privacy.html">Privacy Policy</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="social-icons">
+                        <a href="https://www.facebook.com" target="_blank" title="Facebook"><i class="fab fa-facebook-f"></i></a>
+                        <a href="https://www.instagram.com" target="_blank" title="Instagram"><i class="fab fa-instagram"></i></a>
+                        <a href="https://www.google.com" target="_blank" title="Google"><i class="fab fa-google"></i></a>
+                        <a href="https://www.linkedin.com" target="_blank" title="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+                    </div>
+                    <div class="footer-bottom">
+                        <p>&copy; 2024 Lyotex E-Commerce. All Rights Reserved.</p>
+                    </div>
+                </footer>
+                
+            
+                <script>
+                    document.getElementById('productsBtn').addEventListener('click', function() {
+            // Scroll to the offers section
+            window.location.href = '/#offers'; // Redirect to homepage and scroll to offers section
+        });
+
+                const mobileMenu = document.getElementById('mobile-menu');
+                const navbarMenu = document.querySelector('.navbar-menu');
+
+                mobileMenu.addEventListener('click', () => {
+                    navbarMenu.classList.toggle('active');
+                });
+
+                
+                    const productList = [
+                        {
+                            title: "Probiotics",
+                            descp: "These biotin-infused gummies are known to help improve hair health and may assist in reducing hair fall. Rich in essential nutrients, they cater to both men and women, supporting hair growth and overall wellness.",
+                            price: "$50.00",
+                            image: "images/Probiotics.jpg",
+                        },
+                        {
+                            title: "Multivitamins",
+                            descp: "POWER-PACKED NUTRITION WITH 100% RDA OF VITAMINS AND MINERALS",
+                            price: "$60.00",
+                            image: "images/Multivitamins.jpg",
+                        },
+                        {
+                            title: "Zinc Supplement",
+                            descp: "Swisse Beauty Biotin+ tablets Boost Keratin Levels contain nicotinamide, which is known to help increase keratin production in the body. Keratin is a vital protein for maintaining healthy hair, skin, and nails, making this biotin supplement a valuable addition to your beauty routine.",
+                            price: "$70.00",
+                            image: "images/Zinc-Supplements.jpg" ,
+                        },
+                        {
+                            title: "Exercise-Ball",
+                            descp: "Exercise Ball",
+                            price: "$80.00",
+                            image: "images/Exercise-Ball.jpg",
+                        },
+                        {
+                            title: "Vitamin D3",
+                            descp: "INJA Wellness Beauty Collagen Powder is known to help improve skin hydration, reduce fine lines and wrinkles, and promote overall skin health. Its unique combination of hydrolyzed marine collagen, glutathione, and vitamin C supports a youthful and radiant complexion.",
+                            price: "$90.00",
+                            image: "images/Vitamin-D3.jpg",
+                        },
+                        {
+                            title: "Calcium Tablets",                            
+                            descp: " Consume with water or as Directed by the Healthcare Professional.",
+                            price: "$40.00",
+                            image: "images/calcium.jpg",
+                        },
+                        {
+                            title: "Elderberry Gummies",
+                            descp: "Consume with water or as directed by Healthcare Professional.",
+                            price: "$30.00",
+                            image: "images/Elderberry-Gummies.jpg",
+                        },
+                        {
+                            title: "Iron Supplements",
+                            descp: "Pregnant or lactating women, diabetics and people with known medical conditions should consult with a physician prior to taking dietary supplements. Keep out of reach of children",
+                            price: "$30.00",
+                            image: "images/Iron-Supplements.jpg",
+                        },
+                        {
+                            title: "Magnesium Complex",
+                            descp: "Take 1 heaping scoop (10g approx.) in 200-250ml water or your favorite beverage. take 1-2 servings daily or as directed by the Healthcare Professional.",
+                            price: "$30.00",
+                            image: "images/Magnesium-Complex.jpg",
+                        }
+                        
+                    ]
+
+                    
+
+                const cart = [];
+
+                window.onload = function() {
+    const container = document.getElementById('product-container');
+    for (let i = 0; i < productList.length; i++) {
+        const product = productList[i];
+
+        // Create a product div
+        const productDiv = document.createElement('div');
+        productDiv.className = 'product';
+
+        // Add content to the product div with an event listener to open the modal
+        productDiv.innerHTML = `
+            <h3>${product.title}</h3>
+            <img src="${product.image}" alt="${product.title}">
+            
+            <p>Price: <span class="price">${product.price}</span></p>
+            <input type="number" min="1" value="1" class="quantity" />
+            <button class="add-to-cart" data-title="${product.title}" data-price="${product.price}" data-img="${product.image}">Add to Cart</button>
+            <button class="view-details" onclick="openModal('${product.title}', '${product.image}', '${product.descp}', '${product.price}')">View Details</button>
+        `;
+
+        // Append the product div to the container
+        container.appendChild(productDiv);
+    }
+
+    // Add event listeners for the "Add to Cart" buttons
+    const buttons = document.querySelectorAll('.add-to-cart');
+    buttons.forEach(button => {
+        button.addEventListener('click', addToCart);
+    });
+};
+
+
+                function addToCart(event) {
+                    const button = event.target;
+                    const title = button.getAttribute('data-title');
+                    const price = button.getAttribute('data-price');
+                    const image = button.getAttribute('data-img');
+                    const quantityInput = button.previousElementSibling; // Get the quantity input
+                    const quantity = parseInt(quantityInput.value);
+
+                    const cartItem = {
+                        title: title,
+                        price: price,
+                        quantity: quantity,
+                        totalPrice: (parseFloat(price.slice(1)) * quantity).toFixed(2), // Remove $ and calculate total
+                        image: image
+                    };
+
+                    // Update the cart
+                    cart.push(cartItem);
+                    updateCartDisplay();
+                }
+
+                function updateCartDisplay() {                   
+                    $("#totalCart").html(cart.length)                    
+                }
+                
+                $('#cartBtn').click(function(){
+                    const cartString = JSON.stringify(cart);
+                    const encodedCart = encodeURIComponent(cartString);
+                    console.log(cart)
+                    window.location.href = `finish.html?cart=${encodedCart}`;
+                    // window.location = "/finish.html"
+
+                })
+                function openModal(title, image, descp, price) {
+    document.getElementById('modalTitle').innerText = title;
+    document.getElementById('modalImage').src = image;
+    document.getElementById('modalDescription').innerText = descp;
+    document.getElementById('modalPrice').innerText = price;
+    document.getElementById('productModal').style.display = 'block';
+}
+
+// Function to close the modal
+function closeModal() {
+    document.getElementById('productModal').style.display = 'none';
+}
+                </script>
+            </body>
+            </html>
+            

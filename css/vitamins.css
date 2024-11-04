@@ -19,7 +19,12 @@
     margin-top: -20vh;
     padding-top: 90px;
 }
-
+.quantity {
+    width: 50%;
+    font-size: 0.9em;
+    padding: 2px;
+    text-align: center;
+}
 
 /* Navigation Links */
 .nav-links a {
@@ -39,173 +44,155 @@
 .nav-links a:hover {
     color: #ccc;
 }
-
-/* Search Container */
-
-
-
-
-
-
-.header-buttons {
-    display: flex;
-    align-items: center;
-}
-
-.header-buttons a {
-    margin-left: 15px;
-    color: white;
-    text-decoration: none;
-    font-size: 22px;
-    padding-bottom: 30px;
-}
-
-.header-buttons .cart-btn i {
-    font-size: 20px;
-}
-body{
-    background-color: #896A67;
-}
-
-
-.container {
-    max-width: 100%;
-    max-height: 100%;
-    margin: auto;
-    margin-top: 80px; /* Adjust to match header height */
-}
-
-h1 {
+body {
+    font-family: Arial, sans-serif;
     text-align: center;
-    color: white;
-    margin-bottom: 20px;
-    margin-top: 80px;
-   
-
+    margin: 0;
+    padding: 0;
+    background-color: #B3A394;
 }
-#drugInfoModal {
-    display: none; 
-    position: fixed; 
-    z-index: 1; 
+h1 {
+    margin-top: 20px;
+}
+.container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+    padding: 20px;
+}
+
+.product {
+    border: 1px solid #ddd;
+    background-color: #CDD7D6;
+    padding: 15px;
+    width: 220px;  /* Set a fixed width for uniformity */
+    height: 350px; /* Fixed height for uniformity */
+    text-align: center;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    transition: transform 0.2s;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.product img {
+    width: 100%;
+    height: 130px; /* Fixed height for uniform image size */
+    object-fit: cover; /* Keeps image within bounds while maintaining aspect ratio */
+    margin-bottom: 10px;
+}
+
+.product h3 {
+    font-size: 1.1em;
+    margin: 10px 0; /* Add spacing around the title */
+    height: 40px; /* Fixed height for title alignment */
+    overflow: hidden; /* Truncate if title is too long */
+}
+
+.price {
+    font-size: 1em;
+    color: #333;
+    margin-bottom: 10px;
+}
+
+.quantity {
+    width: 60%; /* Reduced width for uniformity */
+    font-size: 0.9em;
+    padding: 2px;
+    text-align: center;
+    margin: 0 auto 10px; /* Center-align and add bottom margin */
+}
+
+.add-to-cart {
+    background-color: chocolate;
+    border: none;
+    color: white;
+    padding: 5px 10px;
+    cursor: pointer;
+    border-radius: 5px;
+}
+
+.add-to-cart:hover {
+    background-color: darkorange;
+}
+
+/* View Details Button Styling */
+.view-details {
+    background-color: #333;
+    color: #fff;
+    padding: 5px 10px;
+    border-radius: 5px;
+    margin-top: 5px;
+    cursor: pointer;
+}
+
+.view-details:hover {
+    background-color: #555;
+}
+
+/* Modal styling remains the same as before */
+
+@media (max-width: 768px) {
+    .product {
+        width: 100%; /* Full width on smaller screens */
+    }
+    .container {
+        flex-direction: column;
+        align-items: center;
+    }
+}
+
+/* Modal styling */
+
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 1;
     left: 0;
     top: 0;
-    width: 100%; 
-    height: 100%; 
-    overflow: auto; 
-    background-color: rgb(0,0,0); 
-    background-color: rgba(0,0,0,0.4); 
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgb(0,0,0);
+    background-color: rgba(0,0,0,0.4);
+    padding-top: 60px;
 }
-
 .modal-content {
     background-color: #fefefe;
-    margin: 15% auto; 
+    margin: 5% auto;
     padding: 20px;
     border: 1px solid #888;
-    width: 80%; 
+    width: 80%;
+    max-width: 600px;
+    border-radius: 5px;
+    text-align: center;
 }
-
 .close {
     color: #aaa;
     float: right;
     font-size: 28px;
     font-weight: bold;
 }
-
-
-/* Rest of your styles... */
-
-.products-grid {
-    display: flex;
-    gap: 10px;
-    padding: 30px;
-    flex-wrap: wrap;
-}
-.product button {
-    background-color: rgb(12, 14, 1);
-    color: rgb(252, 248, 248);
-}
-
-.product {
-    width: 14rem;
-    background-color: #c9b2b2;
-    border: 1px solid #ddd;
-    border-radius: 8px;
-    padding: 15px;
-    text-align: center;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-    transition: transform 0.2s;
-    overflow: hidden;
-    height: auto;
-    flex: 0 0 14rem;
-}
-
-.product img {
-    width: 100%;
-    height: 189px;
-    object-fit: cover;
-    border-radius: 8px;
-    margin-bottom: 15px;
-}
-
-.product:hover {
-    transform: scale(1.05); /* Slightly enlarge on hover */
-}
-
-/* .product img {
-    max-width: 100%;
-    height: 300px;
-    border-radius: 8px;
-} */
-
-.product h2 {
-    color: #555;
-    margin: 10px 0; /* Space above and below the title */
-}
-
-.product p {
-    font-size: 18px;
-    color: #777;
-}
-
-.label {
-    display: block;
-    margin-top: 10px;
-}
-
-.quantity {
-    width: 60px;
-    margin: 10px 0;
-    padding: 5px;
-    text-align: center; /* Center text in quantity input */
-}
-
-.add-to-cart {
-    background-color: #28a745;
-    color: white;
-    border: none;
-    border-radius: 5px;
-    padding: 10px 20px;
+.close:hover,
+.close:focus {
+    color: black;
+    text-decoration: none;
     cursor: pointer;
-    font-size: 16px;
-    transition: background-color 0.3s; /* Animation for hover effect */
 }
 
-.add-to-cart:hover {
-    background-color: #218838;
+/* Responsive styling */
+@media (max-width: 768px) {
+    .product {
+        width: 100%; /* Full width on smaller screens */
+    }
+    .container {
+        flex-direction: column;
+        align-items: center;
+    }
 }
-/* .footer{
-    border: 2px solid black;
-    height: 100px;
-    width: 100px;
-    position: fixed;
-    bottom: 15px;
-    right: 23px;
-    width: 150px;
-    height: auto;
-    z-index: 1000;
-    size: 12vh;
-    align-items: center;
-} */
+
+
  
 .footer {
     background-color: black; 
@@ -213,6 +200,7 @@ h1 {
     padding: 20px 0; 
     text-align: center; 
     min-height: 150px; 
+    width: 100%;
 }
 
 .footer-container {
@@ -252,39 +240,7 @@ h1 {
     .footer-section {
         text-align: center;     }
 }
-.modal {
-    position: fixed;
-    z-index: 1;
-    left: 0;
-    top: 0;
-    width: 100%;
-    height: 100%;
-    overflow: auto;
-    background-color: rgb(0,0,0);
-    background-color: rgba(0,0,0,0.4);
-}
 
-.modal-content {
-    background-color: #fefefe;
-    margin: 15% auto;
-    padding: 20px;
-    border: 1px solid #888;
-    width: 80%;
-}
-
-.close {
-    color: #aaa;
-    float: right;
-    font-size: 28px;
-    font-weight: bold;
-}
-
-.close:hover,
-.close:focus {
-    color: black;
-    text-decoration: none;
-    cursor: pointer;
-}
 
 
 

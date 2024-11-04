@@ -63,6 +63,39 @@
 body {
     margin-top: 60px;     margin: 0;
 }
+/* Style for search container */
+
+.search-container {
+    position: relative;
+    display: inline-block;
+}
+
+.search-icon {
+    cursor: pointer;
+    color: #faf9f9;
+    font-size: 16px;
+    margin-left: 15px;
+}
+
+.search-bar {
+    display: none; /* Hide by default */
+    position: absolute;
+    right: 0;
+    top: 100%;
+    margin-top: 5px;
+    padding: 5px;
+    font-size: 14px;
+    width: 150px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+}
+
+.search-bar.active {
+    display: inline-block;
+    outline: none;
+    border-color: #333; /* Change border color to indicate focus */
+}
+
 
 
 
@@ -174,7 +207,7 @@ body {
 }
 
 .scroll-images img {
-    width: 120px;     height: auto;     margin-right: 20px;     border-radius: 10px;
+    width: 120px;     height: 100%;     margin-right: 20px;     border-radius: 10px;
 }
 
 @keyframes scroll {
@@ -190,7 +223,7 @@ body {
     padding: 20px 0;
     background-color: #8C93A8;
 }
-
+    
 .offer-title {
     font-size: 32px;
     font-weight: bold;
@@ -282,8 +315,8 @@ body {
 
 .step-card {
     position: relative;
-    width: 30%;     height: 200px;     overflow: hidden;
-    border-radius: 350px;
+    width: 20%;     height: 200px;     overflow: hidden;
+    border-radius: 200px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
     cursor: pointer;
     transition: transform 0.3s ease;
@@ -297,6 +330,7 @@ background-color: #502F4C;
     object-fit: cover;
     transition: transform 0.3s ease;
     border-radius: 80px;
+    
 }
 
 .step-card:hover {

@@ -1,0 +1,350 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Header styling */
+.header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 10px 20px;
+    background-color: #13070C;
+    color: white;
+    position: fixed;
+    z-index: 1000;
+    width: 100%;
+    height: 18vh;
+    margin-top: -20vh;
+    padding-top: 90px;
+}
+.quantity {
+    width: 50%;
+    font-size: 0.9em;
+    padding: 2px;
+    text-align: center;
+}
+
+/* Navigation Links */
+.nav-links a {
+    margin: 10px 25px 20px;
+    color: white;
+    text-decoration: none;
+    font-size: 16px;
+    margin-top: -10vh;
+    font-size: 4vh;
+    padding-bottom: 10px;
+}
+
+.header nav{
+    margin-bottom: 30px;
+}
+
+.nav-links a:hover {
+    color: #ccc;
+}
+body {
+    font-family: Arial, sans-serif;
+    text-align: center;
+    margin: 0;
+    padding: 0;
+    background-color: #B3A394;
+}
+h1 {
+    margin-top: 20px;
+}
+.container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+    padding: 20px;
+}
+
+.product {
+    border: 1px solid #ddd;
+    background-color: #CDD7D6;
+    padding: 15px;
+    width: 220px;  /* Set a fixed width for uniformity */
+    height: 350px; /* Fixed height for uniformity */
+    text-align: center;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    transition: transform 0.2s;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.product img {
+    width: 100%;
+    height: 130px; /* Fixed height for uniform image size */
+    object-fit: cover; /* Keeps image within bounds while maintaining aspect ratio */
+    margin-bottom: 10px;
+}
+
+.product h3 {
+    font-size: 1.1em;
+    margin: 10px 0; /* Add spacing around the title */
+    height: 40px; /* Fixed height for title alignment */
+    overflow: hidden; /* Truncate if title is too long */
+}
+
+.price {
+    font-size: 1em;
+    color: #333;
+    margin-bottom: 10px;
+}
+
+.quantity {
+    width: 60%; /* Reduced width for uniformity */
+    font-size: 0.9em;
+    padding: 2px;
+    text-align: center;
+    margin: 0 auto 10px; /* Center-align and add bottom margin */
+}
+
+.add-to-cart {
+    background-color: chocolate;
+    border: none;
+    color: white;
+    padding: 5px 10px;
+    cursor: pointer;
+    border-radius: 5px;
+}
+
+.add-to-cart:hover {
+    background-color: darkorange;
+}
+
+/* View Details Button Styling */
+.view-details {
+    background-color: #333;
+    color: #fff;
+    padding: 5px 10px;
+    border-radius: 5px;
+    margin-top: 5px;
+    cursor: pointer;
+}
+
+.view-details:hover {
+    background-color: #555;
+}
+
+/* Modal styling remains the same as before */
+
+@media (max-width: 768px) {
+    .product {
+        width: 100%; /* Full width on smaller screens */
+    }
+    .container {
+        flex-direction: column;
+        align-items: center;
+    }
+}
+
+/* Modal styling */
+
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 1;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgb(0,0,0);
+    background-color: rgba(0,0,0,0.4);
+    padding-top: 60px;
+}
+.modal-content {
+    background-color: #fefefe;
+    margin: 5% auto;
+    padding: 20px;
+    border: 1px solid #888;
+    width: 80%;
+    max-width: 600px;
+    border-radius: 5px;
+    text-align: center;
+}
+.close {
+    color: #aaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+}
+.close:hover,
+.close:focus {
+    color: black;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+/* Responsive styling */
+@media (max-width: 768px) {
+    .product {
+        width: 100%; /* Full width on smaller screens */
+    }
+    .container {
+        flex-direction: column;
+        align-items: center;
+    }
+}
+
+
+ 
+.footer {
+    background-color: black; 
+    color: white; 
+    padding: 20px 0; 
+    text-align: center; 
+    min-height: 150px; 
+    width: 100%;
+}
+
+.footer-container {
+    display: flex; 
+    justify-content: space-around;
+    flex-wrap: wrap; 
+}
+
+.footer-section {
+    flex: 1;     margin: 10px;     min-width: 200px;     padding: 10px; }
+
+.footer-section h3 {
+    margin-bottom: 15px;     font-size: 23px; }
+
+.footer-section p, .footer-section ul {
+    font-size: 19px;     line-height: 1.6; }
+
+.footer-section ul {
+    list-style-type: none;     padding: 0; }
+
+.footer-section ul li {
+    margin: 5px 0; }
+
+.footer-section ul li a {
+    color: white;     text-decoration: none; }
+
+.footer-section ul li a:hover {
+    text-decoration: underline; }
+
+.footer-bottom {
+    margin-top: 20px;     font-size: 17px; }
+
+@media (max-width: 768px) {
+    .footer-container {
+        flex-direction: column;         align-items: center;     }
+
+    .footer-section {
+        text-align: center;     }
+}
+
+
+
+
+/* navbar css */
+
+
+
+
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+}
+
+.navbar {
+    background-color: #333;
+    padding: 10px 20px;
+    position: sticky;
+    top: 0;
+    z-index: 999;
+}
+
+.navbar-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.navbar-logo a {
+    color: #fff;
+    text-decoration: none;
+    font-size: 24px;
+}
+
+.navbar-menu {
+    list-style: none;
+    display: flex;
+}
+
+.navbar-menu li {
+    margin: 0 15px;
+}
+
+.navbar-menu a {
+    color: #fff;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.navbar-menu a:hover {
+    color: #ffcc00; /* Change to your preferred hover color */
+}
+
+.navbar-toggle {
+    display: none;
+    flex-direction: column;
+    cursor: pointer;
+}
+
+.bar {
+    height: 3px;
+    width: 25px;
+    background-color: #fff;
+    margin: 4px 0;
+}
+
+/* Responsive Styles */
+@media (max-width: 768px) {
+    .navbar-menu {
+        display: none;
+        flex-direction: column;
+        position: absolute;
+        top: 60px;
+        left: 0;
+        background-color: #333;
+        width: 100%;
+    }
+
+    .navbar-menu.active {
+        display: flex;
+    }
+
+    .navbar-toggle {
+        display: flex;
+    }
+}
+.social-icons {
+    text-align: center;
+    margin-top: 20px;
+}
+
+.social-icons a {
+    color: #333;
+    font-size: 20px;
+    margin: 0 10px;
+    text-decoration: none;
+    transition: color 0.3s;
+}
+
+.social-icons a:hover {
+    color: #ff5722; /* Change this color as needed for the hover effect */
+}

@@ -63,9 +63,6 @@
             font-size: 15px;
             font-weight: bolder;
         }
-        .register-link a{
-            color: blue;
-        }
 
         .input-box {
             position: relative;
@@ -123,8 +120,8 @@
             color: #333;
         }
 
-        .register-link a{
-            color: #1b7edb;
+        .register-link a {
+            color: #764776;
             font-weight: bold;
         }
 
@@ -207,8 +204,12 @@
             </div>
         </form>
     </div>
-
+<script src="/server.js"></script>
     <script>
+        // window.location.href = '/home.html'; // Use a leading slash for root-level files
+
+        const apiUrl = 'https://your-backend-url.com/api/login'; // Update with your backend URL
+
         function closeModal() {
             document.getElementById('error-modal').style.display = 'none';
         }
@@ -220,6 +221,24 @@
         if (error) {
             document.getElementById('error-modal').style.display = 'block';
         }
+        fetch(apiUrl, {
+    method: 'POST',
+    body: JSON.stringify({ username, password }),
+    headers: { 'Content-Type': 'application/json' },
+})
+.then(response => {
+    if (!response.ok) {
+        throw new Error('Network response was not ok');
+    }
+    return response.json();
+})
+.then(data => {
+    // Handle success
+})
+.catch(error => {
+    console.error('There was a problem with the fetch operation:', error);
+});
+
     </script>
 </body>
 </html>

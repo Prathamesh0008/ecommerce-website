@@ -54,9 +54,9 @@
                     background: orange;
                     padding: 9px;
                     font-size: larger;
-                    color: #fff;
+                    color: #e61a1a;
                     border: none;
-                    margin-bottom: 1rem; cursor: pointer;">Checkout</button>
+                    margin-bottom: 1rem; cursor: pointer;"><a href="checkout.html">Checkout</a></button>
                     <a href="index.html" type="button" style="width: 100%;
                     background: #fff;
                     padding: 9px;
@@ -77,46 +77,50 @@
         }
 
         window.onload = function() {
-            const cartString = getUrlParameter('cart');
-            console.log(cartString)
-            if (cartString) {
-                const cart = JSON.parse(decodeURIComponent(cartString));
-                let totalQuantity = 0;
-                let totalPrice = 0;
+    const cartString = getUrlParameter('cart');
+    console.log(cartString);
+    if (cartString) {
+        const cart = JSON.parse(decodeURIComponent(cartString));
+        let totalQuantity = 0;
+        let totalPrice = 0;
 
-                const cartContainer = document.getElementById('cart-container');
-                cart.forEach(item => {
-                    const cartItemDiv = document.createElement('div');
-                    cartItemDiv.className = 'cart-item';
-                    cartItemDiv.innerHTML = `
-                    <div style="display:flex; place-item:center;gap:10px; padding-bottom:10px">
-                        <img src="${item.image}" style="width:32px; height:32px"/>
-                        <div>
-                            <h3>${item.title}</h3>
-                            <div style="display:flex; gap:10px;">
-                                <p>Qty: ${item.quantity}</p>
-                                <p>Price: $${item.totalPrice}</p>                            
-                            </div>
+        const cartContainer = document.getElementById('cart-container');
+        cart.forEach(item => {
+            const cartItemDiv = document.createElement('div');
+            cartItemDiv.className = 'cart-item';
+            cartItemDiv.innerHTML = `
+                <div style="display:flex; place-item:center;gap:10px; padding-bottom:10px">
+                    <img src="${item.image}" style="width:32px; height:32px"/>
+                    <div>
+                        <h3>${item.title}</h3>
+                        <div style="display:flex; gap:10px;">
+                            <p>Qty: ${item.quantity}</p>
+                            <p>Price: $${item.totalPrice}</p>                            
                         </div>
                     </div>
-                        `;
-                    cartContainer.appendChild(cartItemDiv);
+                </div>
+            `;
+            cartContainer.appendChild(cartItemDiv);
 
-                    // Update total quantity and price
-                    totalQuantity += item.quantity;
-                    totalPrice += parseFloat(item.totalPrice);
-                });
+            // Update total quantity and price
+            totalQuantity += item.quantity;
+            totalPrice += parseFloat(item.totalPrice);
+        });
 
-                // Display total quantity and price
-                const totalsDiv = document.getElementById('totals');
-                totalsDiv.innerHTML = `
-                    <p>Total Qty: ${totalQuantity}</p>
-                    <p>Total Price: $${totalPrice.toFixed(2)}</p>
-                `;
-            } else {
-                document.getElementById('cart-container').innerText = 'Your cart is empty.';
-            }
-        };
+        // Display total quantity and price
+        const totalsDiv = document.getElementById('totals');
+        totalsDiv.innerHTML = `
+            <p>Total Qty: ${totalQuantity}</p>
+            <p>Total Price: $${totalPrice.toFixed(2)}</p>
+        `;
+
+        // Save totalPrice to localStorage for checkout
+        localStorage.setItem("cartTotal", totalPrice.toFixed(2));
+    } else {
+        document.getElementById('cart-container').innerText = 'Your cart is empty.';
+    }
+};
+
         document.getElementById('productsBtn').addEventListener('click', function() {
             // Scroll to the offers section
             window.location.href = '/#offers'; // Redirect to homepage and scroll to offers section
